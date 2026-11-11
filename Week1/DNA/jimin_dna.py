@@ -7,4 +7,4 @@ nG= s.count('G')
 nT= s.count('T')
 
 
-print(f"{nA} {nC} {nG} {nT}")
+print(nA,nC,nG,nT)
