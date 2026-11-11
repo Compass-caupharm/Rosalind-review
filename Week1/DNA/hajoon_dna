@@ -1,0 +1,24 @@
+s = open("rosalind_dna.txt").read().strip()
+for b in "ACGT":
+    print(f"{b}: {s.count(b)}")
+
+
+#collections.Counter 1번 순회 
+
+from collections import Counter
+
+s = open("rosalind_dna.txt").read().strip()
+c = Counter(s)
+
+for b in "ACGT":
+    print(f"{b}: {c[b]}")
+
+print(*(c[b] for b in "ACGT"))  # 제출용
+  
+#collections.Counter 모듈 설명 - 딕셔러니를 반환한다. 
+from collections import Counter
+c = Counter("AGCTTA")
+
+print(c)                    # Counter({'A': 2, 'T': 2, 'G': 1, 'C': 1})
+print(isinstance(c, dict))  # True
+print(c["A"])               # 2
