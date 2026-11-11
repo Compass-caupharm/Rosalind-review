@@ -1,10 +1,10 @@
 with open("rosalind_dna.txt", "r") as f:
-    dna = f.read().strip()
+    s = f.read().strip()
 
-nA= dna.count('A')
-nC= dna.count('C')
-nG= dna.count('G')
-nT= dna.count('T')
+nA= s.count('A')
+nC= s.count('C')
+nG= s.count('G')
+nT= s.count('T')
 
 
 print(f"{nA} {nC} {nG} {nT}")
