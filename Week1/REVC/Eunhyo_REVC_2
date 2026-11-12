@@ -1,0 +1,8 @@
+def solve_from_file(file_path):
+    with open(file_path, 'r') as f:
+        dna_string = f.read().strip()
+    
+    trans_table = str.maketrans('ATCGatcg', 'TAGCtagc')
+    result = dna_string.translate(trans_table)[::-1]
+    
+    print(result)
