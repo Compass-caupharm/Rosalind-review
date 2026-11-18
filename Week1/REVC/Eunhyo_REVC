@@ -1,0 +1,16 @@
+def solve_from_file(file_path):
+    # 파일 경로를 읽기 전용('r')으로 열어 파일 객체 f에 할당한다
+    with open(file_path, 'r') as f:
+        # 파일 전체 내용을 읽어온 뒤, 문자열 앞뒤의 공백 및 줄바꿈 문자(\n 등)를 제거한다.
+        dna_string = f.read().strip()
+    
+    # 'ATCG' 문자를 각각 'TAGC' 문자로 상호 변환하기 위한 매핑 테이블을 생성하다.
+    # (예: A -> T, T -> A, C -> G, G -> C)
+    trans_table = str.maketrans('ATCG', 'TAGC')
+    
+    # 1. translate() 함수를 이용해 DNA 문자열의 각 염기를 상보적 염기로 한 번에 치환한다.
+    # 2. 슬라이싱([::-1])을 사용해 치환된 문자열의 전체 순서를 거꾸로 뒤집는다. (Reverse).
+    result = dna_string.translate(trans_table)[::-1]
+    
+    # 최종적으로 완성된 역상보체(Reverse Complement) 문자열을 화면에 출력한다.
+    print(result)
